@@ -5,7 +5,7 @@ import { Directive,OnInit,Input,HostBinding } from '@angular/core';
 })
 export class TodoColorDirective implements OnInit {
   //ofir-cr
-  @Input('todoColor') todo:string='';
+  @Input('todoColor') todo:string=''; //TODO: fix tabs
    todosplittedwords:string[] = [];
   colors:string[]=['red','blue','yellow','grey','pink'];
 
@@ -14,6 +14,6 @@ export class TodoColorDirective implements OnInit {
     this.todosplittedwords.forEach((word)=> {if (this.colors.includes(word.toLowerCase())) this.color=word.toLowerCase()}); 
   } 
 
-@HostBinding('style.backgroundColor')
+@HostBinding('style.backgroundColor') //TODO: locate properties before methods
 color='';
 }

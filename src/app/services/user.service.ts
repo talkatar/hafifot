@@ -8,8 +8,9 @@ import { CacheService } from "./cache.service";
 export class UserService {
   //ofir-cr
   constructor(private cacheService: CacheService) { }
-  //todo: remove duplication + properties before the constructor
+  //TODO: move userName string to constant
 
+  //TODO: duplicate code
   public userName$ = new BehaviorSubject<string>(this.cacheService.query('userName') ? this.cacheService.query('userName') : '');
 
   public setUser(name: string) {
@@ -22,7 +23,7 @@ export class UserService {
     return this.userName$;
   }
 
-  public getLastLooggedInUser() {
+  public getLastLooggedInUser() { //TODO: we dont need to query the cache twice
     return this.cacheService.query('userName') ? this.cacheService.query('userName') : '';
   }
 
