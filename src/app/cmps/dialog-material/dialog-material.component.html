@@ -1,0 +1,21 @@
+
+
+<!-- <h1 mat-dialog-title >Welcome, {{data.name}}</h1> -->
+<div *ngIf="lastLoggedInUserName.length">
+  <h1 class="logged-user" mat-dialog-title > Welcome back {{ lastLoggedInUserName }} !</h1>
+  <button  mat-raised-button mat-dialog-close  (click)="_onLogOut()" color="primary">Logout</button>
+</div>
+
+
+<section *ngIf="!lastLoggedInUserName.length">
+  <h1 mat-dialog-title >Please login</h1>
+<section class="form-container">
+<mat-form-field class="mat-input" class="example-full-width">
+  <mat-label>Username:</mat-label>
+  <input class="mat-input-user"  matInput placeholder="Enter username"  [(ngModel)]="userName" name="userName" required>
+</mat-form-field>
+<mat-dialog-actions>
+  <button  mat-raised-button mat-dialog-close  (click)="_emitData()"  [disabled]="!userName.length"  color="primary">submit</button>
+</mat-dialog-actions>
+</section>
+</section>

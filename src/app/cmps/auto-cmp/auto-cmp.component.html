@@ -1,0 +1,10 @@
+<h1 >Todos list :</h1>
+
+<ul *ngIf="todos">
+  <li class="todo" *ngFor="let todo of todos ;trackBy:trackByFn">
+    <div  class="text-container">
+      <h2 [todoColor]="todo.name" >{{ todo.name }}</h2>
+    </div>
+    <button mat-button (click)="onAddTodo(todo._id)">Add to-do</button>
+  </li>
+</ul>

@@ -1,0 +1,31 @@
+:host {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
+
+    .logged-user {}
+
+    h1 {}
+
+    .form-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .mat-mdc-dialog-actions {
+        padding-inline-start: 20px;
+        margin-block-end: 20px;
+    }
+
+    .mat-mdc-form-field {
+        margin-inline-start: 22px;
+    }
+
+    .btn-close {
+        background-color: #fff;
+    }
+}

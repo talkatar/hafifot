@@ -1,0 +1,10 @@
+<h1>Todos i have :</h1>
+
+<ul *ngIf="todos.length">
+    <li class="todo" *ngFor="let todo of todos ;trackBy:trackByFn">
+      <div class="text-container">
+        <h2>{{ todo.name }}</h2>
+      </div>
+      <button mat-button (click)="onRemoveTodo(todo._id)">Remove to-do</button>
+    </li>
+  </ul>

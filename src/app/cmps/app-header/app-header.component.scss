@@ -1,0 +1,25 @@
+:host {
+    .app-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #c6c1c1;
+    }
+
+    .app-header-user{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #c6c1c1;
+    }
+
+    .user-name{
+        margin-inline-start: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 500;
+    }
+
+    .unactive {
+        color: #000000
+    }
+}

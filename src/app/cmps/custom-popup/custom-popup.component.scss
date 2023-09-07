@@ -1,0 +1,53 @@
+:host {
+  .alert {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    top: -15vh;
+    right: 0;
+    width: 35vw;
+    z-index: 9999;
+    border-radius: 14px 14px 14px 14px;
+    background: linear-gradient(to right, hsl(210, 63%, 67%), hsl(180, 58%, 75%));
+    height: 77px;
+    border: 2px solid hsla(248, 98%, 38%, 0.2);
+    line-height: 20px;
+    transition: 1s;
+    box-shadow: 0 0 12px #999;
+
+    &:hover {
+      box-shadow: 0 0 22px #000;
+    }
+  }
+
+  .info-icon {
+    margin-inline-end: 8px;
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .pop-up-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+  .active {
+    top: 15vh;
+  }
+
+  .alert-content {
+    color: white;
+    font-size: 17px;
+    top: 50%;
+    padding-inline-start: 10px;
+    margin: 0px;
+  }
+}

@@ -1,0 +1,7 @@
+<form #form="ngForm">
+    <mat-form-field  >
+        <mat-label>Add to-do</mat-label>
+        <input class="example-full-width" matInput placeholder="Add to-do" [(ngModel)]="todoName" name="todoName" required #inputRef="ngModel">
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="btn-color" (click)="onSubmit(form,inputRef)">Add</button>
+</form>

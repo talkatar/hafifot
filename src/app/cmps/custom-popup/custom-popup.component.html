@@ -1,0 +1,12 @@
+<div class="alert" [ngClass]="{active:popupActive}">
+    <div class="alert-content">
+        <button class="close-btn" mat-icon-button (click)="_onClosePopUp()">
+            <mat-icon>close</mat-icon>
+          </button>
+          <section class="pop-up-flex">
+          <mat-icon class="info-icon">info</mat-icon>
+        <div *ngIf="(user$|async)">{{user$}} user just logged in</div>
+        <div *ngIf="(loggedOutUser)">{{loggedOutUser}} user just logged out </div>
+    </section>
+    </div>
+</div>

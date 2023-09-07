@@ -1,0 +1,13 @@
+<!-- TODO: find a way to avoid btn duplication -->
+<header >
+        <section 
+                [ngClass]="{' app-header-user ': (userName$ | async)?.length, 'app-header': !(userName$ | async)?.length}">
+                <div *ngIf="(userName$ | async)?.length" class="user-name">Hello {{ (userName$ | async) }}</div>
+                <section *ngFor="let route of routes ;trackBy:trackByFn">
+                        <button (click)="_onGetRouteColor(route.name)" mat-button routerLink={{route.path}}
+                                [ngStyle]="{color: _isRouterActive(route.path) ? routeColor: defaultRouteColor }">{{route.name}}</button>
+                </section>
+        </section>
+</header>
+
+<!--  second way without a function route.isActive(route.path, true); -->

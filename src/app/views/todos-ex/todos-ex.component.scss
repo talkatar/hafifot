@@ -1,0 +1,18 @@
+:host{
+    .to-do-cmps{
+        display: flex;
+        border:3px solid black;
+        justify-content: center;
+        gap:40px;
+        margin-block-start: 30px;
+       
+
+    }
+
+    @media(max-width:1000px){
+        .to-do-cmps{
+            flex-direction: column;
+            justify-content: center
+        }
+    }
+}

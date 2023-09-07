@@ -1,0 +1,8 @@
+
+<div class="to-do-cmps">
+    <todos-input (todoInput)="todoInput=$event"  ></todos-input>
+    <auto-cmp (todo)="setTodo($event)"  [removedTodo]="removedTodo" ></auto-cmp>
+    <manual-cmp [todo]="todo" (removedTodo)="setRemovedTodo($event)" [todoInput]="todoInput"></manual-cmp>
+    
+    </div>
+    
