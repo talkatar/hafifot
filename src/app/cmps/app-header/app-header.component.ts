@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router'; //TODO: remove unused libs
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'; //TODO: remove unused libs
 import { Observable, Subscription, filter, of, Subject, takeUntil } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { RouteService } from 'src/app/services/route.service';
@@ -16,7 +16,7 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
     private userService: UserService,
     private utilService: UtilService,
     private routeService: RouteService,//TODO: remove extra line
-
+    public route: ActivatedRoute,
   ) { }
     //ofir-cr
   routeName: string = ''; //TODO: properties comes before methods
@@ -111,7 +111,7 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
   _isRouterActive(routeName: string): boolean {
     const routePath = '/' + this.getRoutePathName();
     //TODO: REMOVE
-    // console.log(routeName !== routePath);
+    console.log(routeName !== routePath);
     return routeName === routePath;
   }
 
