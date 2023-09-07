@@ -16,20 +16,21 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(public dialog: MatDialog,
     private userService: UserService,
     private myfirstnpmService: MyfirstnpmService,
-    private toastr: ToastrService
+    private toastr: ToastrService //TODO: remove unused dependencies from all the component
   ) { }
   //ofir-cr
   destroySubject$ = new Subject<null>();
-  @Input() user$:BehaviorSubject<string>|undefined;
+  @Input() user$:BehaviorSubject<string>|undefined; //TODO: what is thr purpose of this input?
 
 
+//TODO: remove extra line
   ngOnInit(): void {
     this.openDialog();
    this.userService.userName$.pipe(
     takeUntil(this.destroySubject$)
    ).subscribe({
     next:(newUserName)=>  this.user$ =new BehaviorSubject<string>(newUserName)
-  })
+  }) //TODO: CTRL+K+D
   }
 
   openDialog(): void {

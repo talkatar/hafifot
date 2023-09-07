@@ -11,7 +11,7 @@ export class CacheService {
     return JSON.parse(localStorage.getItem(entityType) || 'null') ||'';
   }
 
-  save(entityType: string, entity: string) {
+  save(entityType: string, entity: string) { //TODO: what if we will want to save an complicated object?
     localStorage.setItem(entityType, JSON.stringify(entity));
   }
   

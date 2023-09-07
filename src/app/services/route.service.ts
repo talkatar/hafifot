@@ -9,7 +9,7 @@ export class RouteService {
 
   constructor() { }
   //ofir-cr
-  public routePath$ = new BehaviorSubject<string>('');
+  public routePath$ = new BehaviorSubject<string>('');//TODO: new line
   public routes: { path: string, name: string }[] = [
     { path: '/', name: 'Main page' },
     { path: '/' + GlobalVariables.cssExComponentPath, name: 'Css exercise' },
@@ -18,5 +18,5 @@ export class RouteService {
     { path: '/' + GlobalVariables.directivesExComponentPath, name: 'Directives' },
     { path: '/' + GlobalVariables.dialogExComponentPath, name: 'Dialog' },
     { path: '/' + GlobalVariables.routeComponentPath, name: 'Route' },
-  ]
+  ] // TODO: its good but will be better if it will be in the environment file
 }

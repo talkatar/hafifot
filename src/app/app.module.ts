@@ -63,3 +63,11 @@ import { MatIconModule } from '@angular/material/icon';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+/// TODO - ON THE UI:
+// 1. BUG: after the login the user name is not shown in the toast
+// 2. we dont want the user to be able using the website without login
+// 3. for next cr - all the website should be in hebrew
+// 4. bug in the counter: "Todos i have"
+// 5. add option to logout

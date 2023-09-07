@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router'; //TODO: remove unused libs
 import { Observable, Subscription, filter, of, Subject, takeUntil } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { RouteService } from 'src/app/services/route.service';
@@ -15,18 +15,16 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
     public router: Router,
     private userService: UserService,
     private utilService: UtilService,
-    private routeService: RouteService,
+    private routeService: RouteService,//TODO: remove extra line
 
   ) { }
     //ofir-cr
-  //TODO: properties 
-  routeName: string = '';
-  defaultRouteColor: string = 'black';
-  //TODO: no need
+  routeName: string = ''; //TODO: properties comes before methods
+  defaultRouteColor: string = 'black'; //TODO: move black to enviroment if it is a global constant or just a const here if it is a local constant
   routeColor: string = 'black';
   userName$: Observable<string> = of('');
   destroySubject$ = new Subject<null>();
-  subscribe!: Subscription;
+  subscribe!: Subscription; //TODO: rename
   routes: { path: string, name: string }[] = [];
 
   ngOnInit(): void {
@@ -38,9 +36,10 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
         next: (routePath) => {
           this._onGetRouteColor(routePath);
         }
-      })
+      }) //TODO: fix tabs
 
     //////////Second way ////////////
+      // TODO: next time you make 2 ways of the same this, split it in 2 functions 
 
     // this.subscribe = this.router.events
     //   .pipe(
@@ -111,6 +110,7 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
 
   _isRouterActive(routeName: string): boolean {
     const routePath = '/' + this.getRoutePathName();
+    //TODO: REMOVE
     // console.log(routeName !== routePath);
     return routeName === routePath;
   }
